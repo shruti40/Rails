@@ -1,0 +1,19 @@
+%head
+    .main_title Teams
+
+%body.center
+    = link_to new_team_path, method: :get do
+        .signup-btn Create Team
+
+    %table#groups_dt.table.table-striped.dt-responsive.nowrap{:style => "width:100%"}
+        %tbody
+            - @teams.each do|team|
+                %tr
+                    %td 
+                        = team.name
+                    %td 
+                        = link_to edit_team_path(team.id), method: :get do
+                            Edit
+                    %td 
+                        = link_to team_path(team.id), :method => :delete, :data => {:confirm => "Delete this team permanently?"} do
+                            Destroy

@@ -1,0 +1,21 @@
+
+
+= form_for :team, :url => {:controller => "teams", :action => "create"} do |f|
+    .row.col-6.form
+        .row
+            .col-6
+                = f.label 'Team Name :'
+            .col-6
+                = f.text_field :name, :id => 'name', :class => "form-input ui-corner-all", :size => "44", :autocomplete => "off", :placeholder => "Team Name (Required)", :required => true
+        
+        .row.mr-top
+            .col-6
+                = f.label 'Select Members :'
+            .col-6
+                = f.collection_check_boxes :team_members, User.all, :id, :email do |b|
+                    .collection-check-box
+                        = b.check_box
+                        = b.label
+
+        .row.center.mr-top
+            = submit_tag "ADD TEAM", :class => 'submit_btn'

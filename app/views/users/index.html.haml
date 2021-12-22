@@ -1,0 +1,82 @@
+
+%head
+    .main_title Team Shifts 
+
+%body.center.user_form
+    
+    .login-logout-title Sign In
+
+    %div.errors
+        - if flash[:login_errors]
+            - flash[:login_errors].each do |error|
+                = error
+
+    .col-5.center
+        %form{:action => "/sessions", :method => "post"}
+            %input{:name => "authenticity_token", :placeholder => "password", :type => "hidden", :value => form_authenticity_token}
+            .row  
+                .col-6.columns  
+                    Email :
+                .col-6.columns
+                    %input{:name => "login[email]", :placeholder => "email", :type => "email"}
+
+            %br
+            .row
+                .col-6.columns 
+                    Password :
+                .col-6.columns 
+                    %input{:name => "login[password]", :placeholder => "password", :type => "password"}
+
+            %br
+                .row.center.mr-top
+                    %input.submit{:name => "submit", :type => "submit", :class => 'submit_btn'}
+
+
+    %div.errors
+        - if flash[:registor_errors]
+            - flash[:registor_errors].each do |error|
+                = error
+
+    .login-logout-title Sign Up
+
+    .col-5.center
+        %form{:action => "/users", :method => "post"}
+            
+            %input{:name => "authenticity_token", :placeholder => "password", :type => "hidden", :value => form_authenticity_token}
+            .row  
+                .col-6.columns  
+                    First Name :
+                .col-6.columns 
+                    %input{:name => "user[first_name]"}
+            
+            %br
+            .row    
+                .col-6.columns  
+                    Last Name :
+                .col-6.columns 
+                    %input{:name => "user[last_name]"}
+
+            %br
+            .row    
+                .col-6.columns  
+                    Email :
+                .col-6.columns  
+                    %input{:name => "user[email]"}
+
+            %br
+            .row 
+                .col-6.columns  
+                    Password :
+                .col-6.columns  
+                    %input{:name => "user[password]"}
+
+            %br
+            .row
+                .col-6.columns  
+                    Password Confirmation :
+                .col-6.columns  
+                    %input{:name => "user[password_confirmation]"}
+
+            %br
+            .row.center.mr-top
+                %input.submit{:name => "submit", :type => "submit", :class => 'submit_btn'}

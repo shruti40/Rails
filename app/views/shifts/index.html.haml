@@ -1,0 +1,13 @@
+%head
+    .main_title Shifts
+
+%body.center
+    %br
+    Choose Team
+    = select_tag :team, options_for_select(Team.all.collect { |team| [team.name, team.id] }), id: "select_team", prompt: "Select Team"
+
+    %br
+    %br
+    Team Members
+    %br
+    #member_list

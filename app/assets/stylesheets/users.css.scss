@@ -1,0 +1,66 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.main_title{
+    color: #ef09c0;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.86px;
+    line-height: 36px;
+    margin-top: 5%;
+}
+
+.login-logout-title{
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: -0.86px;
+    line-height: 36px;
+    margin-top: 5%;
+    margin-bottom: 3%;
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.mr-top{
+    margin-top: 5% !important; 
+}
+
+.signup-btn {
+    height: 38px;
+    width: 170px !important;
+    text-align: center;
+    display: inline-block;
+    margin-right: 19px;
+    color: white;
+    padding-top: 6px;
+    background-color: #ef09c0;
+    border-radius: 5px;
+    margin-top:3%;
+    margin-bottom: 5%;
+}
+
+.submit_btn{
+    width: 170px !important;
+    margin:auto;
+}
+
+.user_form{
+    margin-bottom: 10%;
+}
+
+.form-element{
+    display: inline-flex;
+}
+
+.form{
+    margin:auto !important;
+    margin-top: 5% !important;
+}
+
+.table > tbody {
+    text-align: center;
+}

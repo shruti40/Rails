@@ -1,0 +1,26 @@
+= form_for :team, :url => teams_update_path do |f|
+
+    .row.col-6.form
+
+        .row
+            = f.hidden_field :id
+
+        .row.mr-top
+            .col-6
+                = f.label 'Team Name :', :required => true
+            .col-6
+                = f.text_field :name, :id => 'name', :class => "form-input ui-corner-all", :size => "44", :autocomplete => "off", :placeholder => "name (Required)"
+
+
+        .row.mr-top
+            .col-6
+                = f.label 'Select Members :'
+            .col-6
+                = f.collection_check_boxes(:team_members, User.all, :id, :email, { checked: @team.team_members.pluck(:user_id).map(&:to_param) }) do |b|
+                    .collection-check-box
+                        = b.check_box
+                        = b.label 
+
+
+        .row.center.mr-top
+            = submit_tag "UPDATE TEAM", :class => 'submit_btn'

@@ -1,0 +1,46 @@
+
+
+= form_for :shift, :url => shifts_path do |f|
+
+    = f.hidden_field 'team_id', value: params['team_id']
+    = f.hidden_field 'user_id', value: params['user_id']
+
+    - @user = User.find(params['user_id'])
+    - @user_name = @user.first_name
+
+    .row.col-6.form
+
+        .row.mr-top
+            .col-6
+                = f.label 'Shift'
+            .col-6
+                = f.text_field :name, value: @user_name, :disabled=>true
+
+        .row.mr-top
+            .col-6
+                = f.label 'Shift'
+            .col-6
+                = f.select :name, ['Morning Shift', 'Night Shift']
+
+        .row.mr-top
+            .col-6
+                = f.label 'Shift'
+            .col-6
+                = f.select :week_day, ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+
+        .row.mr-top
+            .col-6
+                = f.label 'Start Time'
+            .col-6
+                = f.time_select :start_time
+
+        .row.mr-top
+            .col-6
+                = f.label 'End Time'
+            .col-6
+                = f.time_select :end_time
+            
+        .row.center.mr-top
+            = submit_tag "ADD Shift", :class => 'submit_btn'
+
+    
